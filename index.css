@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    font-family: 'Space Mono', monospace;
+    text-decoration: none;
+    list-style: none;
+    color: white;
+    text-shadow: 0 0 5px #C8C8C8;
+}
+
+body {
+    position: relative;
+
+    height: 100vh;
+    width: 100%;
+
+    background-color: black;
+    background-image: radial-gradient(rgba(0, 150, 0, 0.75), rgb(0, 0, 0) 110%);
+}
+
+body::after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+
+    background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) 2px, transparent 2px, transparent 4px);
+    pointer-events: none;
+}
+
+#bezel {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+}
+
+#content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+    width: 100%;
+}
+
+#content div {
+    max-height: 80vh;
+    max-width: 80%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#content h1  {
+    margin: 10px 0;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#content ul li {
+    margin: 8px 0;
+}
+
+@media (min-width: 1024px) and (min-height: 768px) {
+    #content div {
+        max-height: 80vh;
+        max-width: 700px;
+        text-align: justify;
+    }
+    
+    #content h1  {
+        font-size: 5rem;
+    }
+}
